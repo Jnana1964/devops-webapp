@@ -25,3 +25,8 @@ jobs:
       # Step 4: Show logs
       - name: Show completion
         run: echo "CI Pipeline completed successfully!"
+      - name: Slack Notification
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"✅ CI Build Successful!"}' \
+          ${{ secrets.SLACK_WEBHOOK }}
