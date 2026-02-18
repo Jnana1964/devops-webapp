@@ -1,0 +1,27 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Simulate build
+      - name: Build project
+        run: echo "Building project..."
+
+      # Step 3: Simulate tests
+      - name: Run tests
+        run: echo "All tests passed!"
+
+      # Step 4: Show logs
+      - name: Show completion
+        run: echo "CI Pipeline completed successfully!"
